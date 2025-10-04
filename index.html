@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOMOSHIBI - 君の日常が、世界を救う物語になる。</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&family=Sawarabi+Mincho&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <div class="emblem">SPR</div>
+                <span class="logo-text">探偵事務所</span>
+            </div>
+            <nav class="nav">
+                <a href="#about">事務所について</a>
+                <a href="#how-it-works">仕組み</a>
+                <a href="#missions">依頼一覧</a>
+                <a href="mypage.html" class="btn-header-cta">探偵になる</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ファーストビュー -->
+    <section class="hero">
+        <div class="hero-background"></div>
+        <div class="container hero-content">
+            <div class="hero-text">
+                <div class="hero-catchcopy">謎を解いて社会を明るく照らそう</div>
+                <h1 class="hero-title">君の日常が、<br>世界を救う物語になる。</h1>
+                <p class="hero-description">
+                    あなたは「SPR探偵事務所」の一員となり、<br>
+                    日常の善い行いで力をつけ、社会課題という名の謎に挑む。
+                </p>
+                <button class="btn-primary hero-cta">
+                    <span class="icon">🔍</span>
+                    今すぐ探偵になる
+                </button>
+            </div>
+            <div class="hero-image">
+                <div class="event-pickup-simple">
+                    <a href="event-detail.html" class="pickup-image-card has-custom-image" style="background-image: url('images/nishikihama-event.jpg');">
+                        <div class="pickup-overlay">
+                            <div class="pickup-badge">初回イベント</div>
+                            <h3 class="pickup-title">二色浜の七色のメロディー</h3>
+                            <div class="pickup-hint">
+                                <span class="hint-icon">🔍</span>
+                                <span class="hint-text">クリックして詳細を見る</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator" onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})">▼</div>
+    </section>
+
+    <!-- SPR探偵事務所とは -->
+    <section id="about" class="section section-about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">ようこそ、SPR探偵事務所へ。</h2>
+                <div class="title-underline"></div>
+            </div>
+            <div class="content-box paper-texture about-content">
+                <div class="about-left">
+                    <div class="about-text">
+                        <p>私たちは、各地で起こる不思議な事件の<br>真相を追い求める調査組織です。</p>
+                        <p>あなたには<strong>「探偵」</strong>として、<br>社会課題という名の<em>"謎"</em>に挑んでいただきます。</p>
+                        <p>謎解きイベントとWebアプリが連携し、<br>あなたの日常の<strong>「善い行い」</strong>が、<br>物語を有利に進める<strong>「力」</strong>になります。</p>
+                    </div>
+                </div>
+                <div class="about-right">
+                    <div class="detective-silhouette">
+                        <img src="images/tantei.png" alt="探偵のシルエット" 
+                             onerror="this.onerror=null; this.src='images/tantei.jpg';">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 探偵が挑む謎 -->
+    <section class="section section-problem">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">探偵が挑む、社会に潜む謎</h2>
+                <div class="title-underline"></div>
+                <p style="font-size: 16px; color: var(--primary-brown); margin-top: 20px; max-width: 700px; margin-left: auto; margin-right: auto;">
+                    私たちは、実在する社会課題を「謎」として転化し、<br>探偵が解明に挑む「事件」へと再構築します。
+                </p>
+            </div>
+            
+            <div class="social-issues">
+                <h3 class="issues-heading">扱う社会課題</h3>
+                <div class="problem-grid">
+                    <div class="problem-card">
+                        <div class="problem-icon">🌊</div>
+                        <h4>海洋ゴミ問題</h4>
+                        <p class="issue-detail">年間800万トンのプラスチックゴミが海に流出。美しい海岸線が汚染され、海洋生態系が危機に瀕しています。</p>
+                        <div class="arrow-transform">↓ 謎へ転化</div>
+                        <p class="mystery-title">「蒼い宝石失踪事件」</p>
+                    </div>
+                    <div class="problem-card">
+                        <div class="problem-icon">🎭</div>
+                        <h4>伝統文化の継承</h4>
+                        <p class="issue-detail">後継者不足により、地域に根付いた伝統技術や祭事が消滅の危機。文化的アイデンティティが失われつつあります。</p>
+                        <div class="arrow-transform">↓ 謎へ転化</div>
+                        <p class="mystery-title">「幻のレシピを探せ」</p>
+                    </div>
+                    <div class="problem-card">
+                        <div class="problem-icon">🏘️</div>
+                        <h4>地域の過疎化・活性化</h4>
+                        <p class="issue-detail">人口流出により地域コミュニティが衰退。かつての賑わいが失われ、地域資源が活用されないまま埋もれています。</p>
+                        <div class="arrow-transform">↓ 謎へ転化</div>
+                        <p class="mystery-title">「消えた祭りの音色」</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="problem-summary">
+                <p>これらの社会課題を、<strong class="highlight-gold">探偵が挑む「依頼」</strong>として物語化。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 仕組み -->
+    <section id="how-it-works" class="section section-mechanism">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">仕組み｜ツールと物語は、相互にひらく</h2>
+                <div class="title-underline"></div>
+                <p class="mechanism-intro">
+                    あなたはSPR探偵事務所の新米探偵。<br>
+                    日常の一歩が"道具"を育て、現地の謎でその力が試されます。<br>
+                    達成は「功績」として記録され、次の依頼がもっと面白くなる――そんな循環です。
+                </p>
+            </div>
+            
+            <div class="cycle-container">
+                <div class="cycle-steps">
+                    <div class="cycle-step" data-step="1">
+                        <div class="step-icon">🗑️</div>
+                        <div class="step-number">01</div>
+                        <h3>日常</h3>
+                        <p class="step-subtitle">小さな行動が"道具Lv"になる</p>
+                        <ul class="step-details">
+                            <li>ごみ拾い／地域イベント参加／エコな移動</li>
+                            <li>アプリが行動ポイントに自動変換</li>
+                            <li>ルーペ、ランタン、コンパスがレベルアップ</li>
+                        </ul>
+                    </div>
+
+                    <div class="cycle-arrow">→</div>
+
+                    <div class="cycle-step" data-step="2">
+                        <div class="step-icon">🗺️</div>
+                        <div class="step-number">02</div>
+                        <h3>依頼</h3>
+                        <p class="step-subtitle">現地で物語を解く</p>
+                        <ul class="step-details">
+                            <li>各地の「依頼（ミッション）」を受領</li>
+                            <li>育てた道具で特別ヒントや隠しルート解放</li>
+                            <li>ストーリーの中で課題の"真相"と出会う</li>
+                        </ul>
+                    </div>
+
+                    <div class="cycle-arrow">→</div>
+
+                    <div class="cycle-step" data-step="3">
+                        <div class="step-icon">🎖️</div>
+                        <div class="step-number">03</div>
+                        <h3>記録</h3>
+                        <p class="step-subtitle">功績が次の章をひらく</p>
+                        <ul class="step-details">
+                            <li>回収量／移動距離／参加時間が功績バッジに</li>
+                            <li>より難しい事件への挑戦権や限定ステージが解禁</li>
+                            <li>地図にあなたの足跡が灯り、新たな称号を獲得</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="cycle-center">
+                    <div class="cycle-circle">
+                        <div class="cycle-icon">⟲</div>
+                        <p class="cycle-text">楽しみながら<br>続けるほど<br>世界は深まる</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mechanism-cta">
+                <button class="btn-primary btn-mechanism">
+                    <span class="icon">📝</span>
+                    事前登録して、探偵になる
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- SPR探偵事務所の可能性 -->
+    <section class="section section-benefits">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">SPR探偵事務所の可能性</h2>
+                <div class="title-underline"></div>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">👤</div>
+                    <h3>参加者にとって</h3>
+                    <ul class="benefit-list">
+                        <li>探偵として物語に没入し、楽しみながら社会課題に関われる</li>
+                        <li>日常の善い行いが「力」や「成長」として可視化される</li>
+                        <li>次の依頼やイベントへとつながる継続的な体験が得られる</li>
+                    </ul>
+                    <div class="benefit-quote">"遊びが、未来を変える力になる"</div>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🏘️</div>
+                    <h3>社会課題を抱える<br>企業・自治体にとって</h3>
+                    <ul class="benefit-list">
+                        <li>謎を通じて課題解決行動を実際に誘発できる（行動が成果になる）</li>
+                        <li>課題を物語化し、参加者の共感・理解を自然に促せる</li>
+                        <li>実施された行動をデータ化し、施策評価や次の戦略に活用できる</li>
+                    </ul>
+                    <div class="benefit-quote">"謎が、人を動かし、地域を変える"</div>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🏢</div>
+                    <h3>協賛くださる<br>企業・自治体にとって</h3>
+                    <ul class="benefit-list">
+                        <li>物語に組み込まれたスポンサーとして、社会的意義とブランドを訴求できる</li>
+                        <li>参加者から「役立つ支援をくれる存在」として認知される</li>
+                        <li>協賛を通じて得られる行動データをCSR・マーケティングに活用できる</li>
+                    </ul>
+                    <div class="benefit-quote">"物語に寄り添う支援が、共感を生む"</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- よくある質問 -->
+    <section class="section section-faq">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">よくある質問</h2>
+                <div class="title-underline"></div>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>探偵として参加するには、どうすればいいですか？</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Webサイトから無料で探偵登録ができます。登録後、開催されるイベントに参加したり、日常の社会貢献活動をアプリから報告したりできます。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>参加費用はかかりますか？</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        アプリの利用と探偵登録は無料です。謎解きイベントへの参加には、イベントごとに参加費が必要な場合があります（多くは500〜2,000円程度）。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>子どもでも参加できますか？</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        はい、ご家族での参加を歓迎しています。謎解きイベントは、お子様でも楽しめる難易度設定がされているものも多数あります。保護者同伴であれば、小学生からの参加が可能です。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>自治体や企業として、謎解きイベントを導入したいのですが？</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        ありがとうございます！まずは資料請求または協賛相談フォームからお問い合わせください。地域の課題や規模に合わせた導入プランをご提案させていただきます。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>どんな社会課題に取り組んでいますか？</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        海洋ゴミ問題、伝統文化の継承、地域活性化、森林保護など、地域ごとに異なる課題に取り組んでいます。各イベントは、その地域の実際の課題をテーマにした物語として設計されています。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>活動の効果は測定できますか？</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        はい。アプリを通じて、参加人数、貢献量（ゴミ回収量など）、継続率などのデータを収集・分析しています。自治体・企業様には、活動レポートとして定期的にご報告いたします。
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 署名付きCTA -->
+    <section class="section section-cta-final">
+        <div class="container">
+            <div class="cta-final-box">
+                <h2>さあ、君も探偵にならないか？</h2>
+                <p class="cta-intro">
+                    社会課題解決を、ワクワクする物語へ。<br>
+                    SPR探偵事務所と一緒に、持続可能な地域づくりを始めませんか？
+                </p>
+                
+                <div class="cta-actions">
+                    <div class="cta-action-card">
+                        <div class="cta-icon">📝</div>
+                        <h3>事前登録</h3>
+                        <p>探偵として活動を始めたい方へ。アプリリリース時にいち早くご案内します。</p>
+                        <button class="btn-primary">
+                            無料で事前登録
+                        </button>
+                    </div>
+                    <div class="cta-action-card">
+                        <div class="cta-icon">📄</div>
+                        <h3>資料請求</h3>
+                        <p>自治体・企業の方へ。導入事例や効果測定データを詳しくご紹介します。</p>
+                        <button class="btn-secondary">
+                            資料をダウンロード
+                        </button>
+                    </div>
+                    <div class="cta-action-card">
+                        <div class="cta-icon">🤝</div>
+                        <h3>協賛相談</h3>
+                        <p>一緒に地域を盛り上げたい企業・団体様へ。まずはお気軽にご相談ください。</p>
+                        <button class="btn-secondary">
+                            お問い合わせ
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="cta-signature">
+                    <div class="signature-text">
+                        <p>一人ひとりの小さな行動が、大きな変化を生み出す。</p>
+                        <p>その物語の主人公は、あなたです。</p>
+                    </div>
+                    <div class="signature-name">
+                        <p>SPR探偵事務所</p>
+                        <p class="signature-role">所長 一同</p>
+                    </div>
+                </div>
+                
+                <p class="cta-note">
+                    ※アプリは現在開発中です。事前登録いただいた方には、リリース時に優先的にご案内いたします。<br>
+                    ※イベント参加には別途参加費が必要な場合があります。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- フッター -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <div class="emblem">SPR</div>
+                        <span class="logo-text">探偵事務所</span>
+                    </div>
+                    <p>ソーシャル・インパクト・エンターテインメント</p>
+                </div>
+                <div class="footer-section">
+                    <h4>リンク</h4>
+                    <ul>
+                        <li><a href="#about">事務所について</a></li>
+                        <li><a href="#how-it-works">仕組み</a></li>
+                        <li><a href="#missions">依頼一覧</a></li>
+                        <li><a href="mypage.html">マイページ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>サポート</h4>
+                    <ul>
+                        <li><a href="#">よくある質問</a></li>
+                        <li><a href="#">お問い合わせ</a></li>
+                        <li><a href="#">利用規約</a></li>
+                        <li><a href="#">プライバシーポリシー</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 TOMOSHIBI - SPR探偵事務所. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // FAQアコーディオン
+        function toggleFaq(element) {
+            const faqItem = element.parentElement;
+            const answer = faqItem.querySelector('.faq-answer');
+            const icon = element.querySelector('.faq-icon');
+            
+            // 他のFAQを閉じる
+            document.querySelectorAll('.faq-item').forEach(item => {
+                if (item !== faqItem && item.classList.contains('active')) {
+                    item.classList.remove('active');
+                    item.querySelector('.faq-answer').style.maxHeight = null;
+                    item.querySelector('.faq-icon').textContent = '+';
+                }
+            });
+            
+            // クリックされたFAQを開閉
+            faqItem.classList.toggle('active');
+            if (faqItem.classList.contains('active')) {
+                answer.style.maxHeight = answer.scrollHeight + 'px';
+                icon.textContent = '−';
+            } else {
+                answer.style.maxHeight = null;
+                icon.textContent = '+';
+            }
+        }
+    </script>
+</body>
+</html>
+
