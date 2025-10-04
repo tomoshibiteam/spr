@@ -8,13 +8,18 @@
     <link rel="stylesheet" href="app-styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&family=Sawarabi+Mincho&display=swap" rel="stylesheet">
     <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
         .login-body {
             background: linear-gradient(135deg, var(--dark-brown) 0%, var(--primary-brown) 50%, var(--dark-brown) 100%);
-            min-height: 100vh;
+            min-height: calc(100vh - 70px);
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 40px 20px;
+            padding: 20px;
             position: relative;
             overflow: hidden;
         }
@@ -22,8 +27,8 @@
         .login-body::before {
             content: '🔍';
             position: absolute;
-            font-size: 400px;
-            opacity: 0.05;
+            font-size: 300px;
+            opacity: 0.03;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%) rotate(-15deg);
@@ -31,12 +36,12 @@
         }
 
         .login-container {
-            max-width: 500px;
+            max-width: 450px;
             width: 100%;
             background: var(--cream);
             border-radius: 12px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
-            border: 4px solid var(--gold);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+            border: 3px solid var(--gold);
             position: relative;
             z-index: 1;
             overflow: hidden;
@@ -44,73 +49,63 @@
 
         .login-header {
             background: linear-gradient(to bottom, var(--primary-brown), var(--dark-brown));
-            padding: 40px;
+            padding: 20px;
             text-align: center;
             color: var(--text-light);
             position: relative;
         }
 
         .login-emblem {
-            width: 80px;
-            height: 80px;
-            border: 4px solid var(--gold);
+            width: 50px;
+            height: 50px;
+            border: 3px solid var(--gold);
             border-radius: 50%;
             display: inline-flex;
             align-items: center;
             justify-content: center;
             font-weight: 700;
-            font-size: 24px;
+            font-size: 16px;
             background: radial-gradient(circle, var(--gold), var(--brass));
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
-            margin-bottom: 20px;
-            animation: glow 2s ease-in-out infinite;
-        }
-
-        @keyframes glow {
-            0%, 100% {
-                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
-            }
-            50% {
-                box-shadow: 0 8px 24px rgba(212, 175, 55, 0.6);
-            }
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+            margin-bottom: 10px;
         }
 
         .login-title {
-            font-size: 28px;
+            font-size: 20px;
             font-weight: 700;
-            margin-bottom: 10px;
+            margin-bottom: 5px;
             color: var(--text-light);
         }
 
         .login-subtitle {
-            font-size: 15px;
+            font-size: 12px;
             color: var(--dark-cream);
         }
 
         .login-form {
-            padding: 40px;
+            padding: 25px;
         }
 
         .form-group {
-            margin-bottom: 25px;
+            margin-bottom: 18px;
         }
 
         .form-label {
             display: block;
-            font-size: 15px;
+            font-size: 13px;
             font-weight: 700;
             color: var(--sepia);
-            margin-bottom: 10px;
+            margin-bottom: 6px;
         }
 
         .form-input {
             width: 100%;
-            padding: 15px;
+            padding: 10px 12px;
             border: 2px solid var(--primary-brown);
-            border-radius: 8px;
+            border-radius: 6px;
             background: var(--dark-cream);
             font-family: 'Noto Serif JP', serif;
-            font-size: 15px;
+            font-size: 14px;
             color: var(--text-dark);
             transition: all 0.3s;
         }
@@ -118,7 +113,7 @@
         .form-input:focus {
             outline: none;
             border-color: var(--gold);
-            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+            box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.2);
             background: var(--cream);
         }
 
@@ -126,24 +121,25 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
+            gap: 10px;
         }
 
         .remember-me {
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 6px;
             cursor: pointer;
         }
 
         .remember-me input {
-            width: 18px;
-            height: 18px;
+            width: 16px;
+            height: 16px;
             cursor: pointer;
         }
 
         .remember-me label {
-            font-size: 14px;
+            font-size: 12px;
             color: var(--text-dark);
             cursor: pointer;
         }
@@ -151,46 +147,46 @@
         .forgot-password {
             color: var(--deep-green);
             text-decoration: none;
-            font-size: 14px;
+            font-size: 12px;
             font-weight: 600;
             transition: all 0.3s;
+            white-space: nowrap;
         }
 
         .forgot-password:hover {
             color: var(--gold);
-            text-decoration: underline;
         }
 
         .submit-button {
             width: 100%;
             background: linear-gradient(135deg, var(--gold), var(--brass));
             color: var(--text-dark);
-            padding: 18px 40px;
+            padding: 12px 28px;
             border: none;
-            border-radius: 30px;
-            font-size: 18px;
+            border-radius: 25px;
+            font-size: 15px;
             font-weight: 700;
             cursor: pointer;
-            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+            box-shadow: 0 3px 10px rgba(212, 175, 55, 0.3);
             transition: all 0.4s;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
+            gap: 8px;
         }
 
         .submit-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 30px rgba(212, 175, 55, 0.4);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.4);
         }
 
         .submit-button::before {
             content: '🔐';
-            font-size: 24px;
+            font-size: 18px;
         }
 
         .login-divider {
-            margin: 30px 0;
+            margin: 20px 0 15px;
             text-align: center;
             position: relative;
         }
@@ -207,41 +203,41 @@
 
         .login-divider span {
             background: var(--cream);
-            padding: 0 20px;
+            padding: 0 15px;
             position: relative;
             color: var(--primary-brown);
-            font-size: 14px;
+            font-size: 11px;
             font-weight: 600;
         }
 
         .signup-link-section {
             text-align: center;
-            padding: 20px;
+            padding: 15px;
             background: var(--dark-cream);
             border-radius: 8px;
             border: 2px solid var(--primary-brown);
         }
 
         .signup-link-text {
-            font-size: 14px;
+            font-size: 12px;
             color: var(--text-dark);
-            margin-bottom: 15px;
+            margin-bottom: 10px;
         }
 
         .signup-link-button {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
+            gap: 6px;
             color: var(--deep-green);
             text-decoration: none;
-            font-size: 16px;
+            font-size: 14px;
             font-weight: 700;
             transition: all 0.3s;
         }
 
         .signup-link-button:hover {
             color: var(--gold);
-            transform: translateX(5px);
+            transform: translateX(3px);
         }
 
         .signup-link-button::after {
@@ -251,26 +247,6 @@
 
         .signup-link-button:hover::after {
             transform: translateX(3px);
-        }
-
-        .back-to-home {
-            text-align: center;
-            margin-top: 30px;
-        }
-
-        .back-to-home a {
-            color: var(--primary-brown);
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 600;
-            transition: all 0.3s;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .back-to-home a:hover {
-            color: var(--gold);
         }
 
         /* アニメーション */
@@ -292,144 +268,112 @@
         /* レスポンシブ */
         @media (max-width: 768px) {
             .login-body {
-                padding: 20px 15px;
+                padding: 15px;
             }
 
             .login-header {
-                padding: 30px 20px;
-            }
-
-            .login-emblem {
-                width: 70px;
-                height: 70px;
-                font-size: 20px;
-            }
-
-            .login-title {
-                font-size: 24px;
-            }
-
-            .login-subtitle {
-                font-size: 14px;
+                padding: 15px;
             }
 
             .login-form {
-                padding: 30px 20px;
-            }
-
-            .form-label {
-                font-size: 14px;
-            }
-
-            .form-input {
-                padding: 12px;
-                font-size: 14px;
+                padding: 20px 15px;
             }
 
             .form-options {
                 flex-direction: column;
                 align-items: flex-start;
-                gap: 12px;
-            }
-
-            .submit-button {
-                padding: 15px 32px;
-                font-size: 16px;
+                gap: 8px;
             }
         }
 
         @media (max-width: 480px) {
             .login-container {
-                border-width: 3px;
-            }
-
-            .login-header {
-                padding: 25px 15px;
-            }
-
-            .login-emblem {
-                width: 60px;
-                height: 60px;
-                font-size: 18px;
-            }
-
-            .login-title {
-                font-size: 22px;
-            }
-
-            .login-subtitle {
-                font-size: 13px;
+                border-width: 2px;
             }
 
             .login-form {
-                padding: 25px 15px;
+                padding: 15px;
             }
         }
     </style>
 </head>
-<body class="login-body">
-    <div class="login-container">
-        <div class="login-header">
-            <div class="login-emblem">SPR</div>
-            <h1 class="login-title">探偵事務所ログイン</h1>
-            <p class="login-subtitle">未解決の事件があなたを待っています</p>
+<body>
+    <!-- ヘッダー -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <div class="emblem">SPR</div>
+                <span class="logo-text">探偵事務所</span>
+            </div>
+            <nav class="nav">
+                <a href="index.html">トップ</a>
+                <a href="index.html#about">事務所について</a>
+                <a href="login.html" class="btn-header-cta">ログイン</a>
+                <a href="signup.html">新規登録</a>
+            </nav>
         </div>
+    </header>
 
-        <form class="login-form" id="loginForm">
-            <div class="form-group">
-                <label class="form-label" for="email">
-                    メールアドレス
-                </label>
-                <input 
-                    type="email" 
-                    id="email" 
-                    class="form-input" 
-                    placeholder="detective@example.com"
-                    required
-                >
+    <div class="login-body">
+        <div class="login-container">
+            <div class="login-header">
+                <div class="login-emblem">SPR</div>
+                <h1 class="login-title">探偵事務所ログイン</h1>
+                <p class="login-subtitle">未解決の事件があなたを待っています</p>
             </div>
 
-            <div class="form-group">
-                <label class="form-label" for="password">
-                    パスワード
-                </label>
-                <input 
-                    type="password" 
-                    id="password" 
-                    class="form-input" 
-                    placeholder="パスワードを入力"
-                    required
-                >
-            </div>
-
-            <div class="form-options">
-                <div class="remember-me">
-                    <input type="checkbox" id="remember">
-                    <label for="remember">ログイン状態を保持</label>
+            <form class="login-form" id="loginForm">
+                <div class="form-group">
+                    <label class="form-label" for="email">
+                        メールアドレス
+                    </label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        class="form-input" 
+                        placeholder="detective@example.com"
+                        required
+                    >
                 </div>
-                <a href="forgot-password.html" class="forgot-password">パスワードを忘れた方</a>
-            </div>
 
-            <button type="submit" class="submit-button">
-                ログインする
-            </button>
+                <div class="form-group">
+                    <label class="form-label" for="password">
+                        パスワード
+                    </label>
+                    <input 
+                        type="password" 
+                        id="password" 
+                        class="form-input" 
+                        placeholder="パスワードを入力"
+                        required
+                    >
+                </div>
 
-            <div class="login-divider">
-                <span>まだアカウントをお持ちでない方</span>
-            </div>
+                <div class="form-options">
+                    <div class="remember-me">
+                        <input type="checkbox" id="remember">
+                        <label for="remember">ログイン状態を保持</label>
+                    </div>
+                    <a href="forgot-password.html" class="forgot-password">パスワードを忘れた方</a>
+                </div>
 
-            <div class="signup-link-section">
-                <p class="signup-link-text">
-                    新規登録して探偵活動を始めましょう
-                </p>
-                <a href="signup.html" class="signup-link-button">
-                    探偵事務所に入所する
-                </a>
-            </div>
-        </form>
+                <button type="submit" class="submit-button">
+                    ログインする
+                </button>
 
-        <div class="back-to-home">
-            <a href="index.html">← トップページに戻る</a>
+                <div class="login-divider">
+                    <span>まだアカウントをお持ちでない方</span>
+                </div>
+
+                <div class="signup-link-section">
+                    <p class="signup-link-text">
+                        新規登録して探偵活動を始めましょう
+                    </p>
+                    <a href="signup.html" class="signup-link-button">
+                        探偵事務所に入所する
+                    </a>
+                </div>
+            </form>
         </div>
     </div>
 
@@ -451,4 +395,3 @@
     </script>
 </body>
 </html>
-
