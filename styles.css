@@ -376,66 +376,6 @@ body {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
 }
 
-.pickup-label {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    background: linear-gradient(135deg, #e63946, #f72136);
-    color: white;
-    padding: 6px 16px;
-    border-radius: 6px;
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    box-shadow: 0 4px 12px rgba(230, 57, 70, 0.5);
-    z-index: 2;
-    animation: pickupPulse 2s ease-in-out infinite;
-    border: 2px solid white;
-}
-
-@keyframes pickupPulse {
-    0%, 100% {
-        transform: scale(1);
-        box-shadow: 0 4px 12px rgba(230, 57, 70, 0.5);
-    }
-    50% {
-        transform: scale(1.05);
-        box-shadow: 0 6px 16px rgba(230, 57, 70, 0.7);
-    }
-}
-
-/* クリック可能であることを示すヒント */
-.pickup-hint {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    margin-top: 15px;
-    padding: 10px 20px;
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(10px);
-    border-radius: 25px;
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    transition: all 0.3s ease;
-}
-
-.pickup-image-card:hover .pickup-hint {
-    background: rgba(255, 255, 255, 0.25);
-    border-color: var(--gold);
-    transform: scale(1.05);
-}
-
-.hint-icon {
-    font-size: 20px;
-    animation: decorPulse 2s ease-in-out infinite;
-}
-
-.hint-text {
-    font-size: 14px;
-    font-weight: 600;
-    color: white;
-    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.8);
-}
 
 .magnifier, .compass {
     font-size: 64px;
@@ -2237,21 +2177,6 @@ body {
         padding: 8px 16px;
     }
     
-    .pickup-label {
-        top: 12px;
-        right: 12px;
-        font-size: 12px;
-        padding: 5px 14px;
-    }
-    
-    .pickup-hint {
-        padding: 8px 16px;
-    }
-    
-    .hint-text {
-        font-size: 13px;
-    }
-    
     /* セクション */
     .section {
         padding: 60px 0;
@@ -2525,25 +2450,6 @@ body {
     .pickup-badge {
         font-size: 12px;
         padding: 8px 14px;
-    }
-    
-    .pickup-label {
-        top: 10px;
-        right: 10px;
-        font-size: 11px;
-        padding: 4px 12px;
-    }
-    
-    .pickup-hint {
-        padding: 8px 14px;
-    }
-    
-    .hint-icon {
-        font-size: 18px;
-    }
-    
-    .hint-text {
-        font-size: 12px;
     }
     
     .scroll-indicator {
