@@ -21,7 +21,8 @@ const login = async () => {
   try {
     await auth0Client.loginWithRedirect({
       authorizationParams: {
-        redirect_uri: window.location.origin + '/callback.html'
+        redirect_uri: window.location.origin + '/callback.html',
+        ui_locales: 'ja'
       }
     });
   } catch (err) {
@@ -35,7 +36,8 @@ const signup = async () => {
     await auth0Client.loginWithRedirect({
       authorizationParams: {
         redirect_uri: window.location.origin + '/callback.html',
-        screen_hint: 'signup'
+        screen_hint: 'signup',
+        ui_locales: 'ja'
       }
     });
   } catch (err) {
