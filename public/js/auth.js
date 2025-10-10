@@ -116,8 +116,17 @@ window.onload = async () => {
   const signupButtons = document.querySelectorAll('.btn-signup');
   const logoutButtons = document.querySelectorAll('.btn-logout');
 
-  loginButtons.forEach(btn => btn.addEventListener('click', login));
-  signupButtons.forEach(btn => btn.addEventListener('click', signup));
-  logoutButtons.forEach(btn => btn.addEventListener('click', logout));
+  loginButtons.forEach(btn => btn.addEventListener('click', (e) => {
+    e.preventDefault();
+    login();
+  }));
+  signupButtons.forEach(btn => btn.addEventListener('click', (e) => {
+    e.preventDefault();
+    signup();
+  }));
+  logoutButtons.forEach(btn => btn.addEventListener('click', (e) => {
+    e.preventDefault();
+    logout();
+  }));
 };
 
