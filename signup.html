@@ -449,8 +449,10 @@
     </div>
 </div>
 
+    <script src="https://cdn.auth0.com/js/auth0-spa-js/2.0/auth0-spa-js.production.js"></script>
+    <script src="js/auth.js"></script>
     <script>
-        // パスワード強度チェック
+        // パスワード強度チェック（Auth0の場合は不要だが、UIとして残す）
         document.getElementById('password').addEventListener('input', function(e) {
             const password = e.target.value;
             const bars = document.querySelectorAll('.strength-bar');
@@ -472,26 +474,20 @@
             });
         });
 
-        // フォーム送信処理
-        document.getElementById('signupForm').addEventListener('submit', function(e) {
+        // フォーム送信処理（Auth0サインアップ）
+        document.getElementById('signupForm').addEventListener('submit', async function(e) {
             e.preventDefault();
-            
-            const password = document.getElementById('password').value;
-            const passwordConfirm = document.getElementById('password-confirm').value;
-
-            if (password !== passwordConfirm) {
-                alert('パスワードが一致しません。もう一度ご確認ください。');
-                return;
+            await signup();
+        });
+        
+        // ページ読み込み時に既にログイン済みかチェック
+        window.addEventListener('load', async () => {
+            await configureClient();
+            const isAuth = await isAuthenticated();
+            if (isAuth) {
+                // 既にログイン済みの場合はマイページへリダイレクト
+                window.location.href = 'mypage.html';
             }
-
-            if (password.length < 8) {
-                alert('パスワードは8文字以上で設定してください。');
-                return;
-            }
-
-            // 実際の登録処理をここに実装
-            alert('探偵事務所への入所手続きが完了しました！\nログインページへ移動します。');
-            window.location.href = 'login.html';
         });
     </script>
 </body>

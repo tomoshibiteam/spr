@@ -1,0 +1,13 @@
+{
+  "name": "spr-detective-agency",
+  "version": "1.0.0",
+  "description": "SPR探偵事務所 - 謎解きで社会課題に挑む",
+  "scripts": {
+    "dev": "vercel dev",
+    "build": "echo 'Static site - no build needed'",
+    "deploy": "vercel --prod"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
+

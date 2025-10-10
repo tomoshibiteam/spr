@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>認証処理中... - SPR探偵事務所</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .callback-container {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: var(--cream);
+            padding: 20px;
+        }
+        
+        .callback-content {
+            text-align: center;
+            max-width: 500px;
+        }
+        
+        .callback-spinner {
+            width: 80px;
+            height: 80px;
+            border: 8px solid var(--dark-cream);
+            border-top: 8px solid var(--gold);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 30px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .callback-title {
+            font-size: 24px;
+            color: var(--sepia);
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        .callback-message {
+            font-size: 16px;
+            color: var(--primary-brown);
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="callback-container">
+        <div class="callback-content">
+            <div class="callback-spinner"></div>
+            <h1 class="callback-title">認証処理中...</h1>
+            <p class="callback-message">
+                ログイン情報を確認しています。<br>
+                しばらくお待ちください。
+            </p>
+        </div>
+    </div>
+
+    <script src="https://cdn.auth0.com/js/auth0-spa-js/2.0/auth0-spa-js.production.js"></script>
+    <script src="js/auth.js"></script>
+    <script>
+        // コールバック処理後にマイページへリダイレクト
+        window.onload = async () => {
+            try {
+                await configureClient();
+                await auth0Client.handleRedirectCallback();
+                window.location.href = '/mypage.html';
+            } catch (err) {
+                console.error('コールバックエラー:', err);
+                document.querySelector('.callback-message').innerHTML = 
+                    'エラーが発生しました。<br><a href="/" style="color: var(--gold);">トップページに戻る</a>';
+            }
+        };
+    </script>
+</body>
+</html>
+
