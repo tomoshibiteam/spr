@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&family=Noto+Sans+JP:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-tomoshibi-beige text-tomoshibi-brown font-sans;
+    letter-spacing: 0.03em;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+    letter-spacing: 0.05em;
+  }
+  
+  * {
+    @apply transition-colors duration-300;
+  }
+}
+
+@layer utilities {
+  .text-shadow-gold {
+    text-shadow: 0 2px 16px rgba(214, 184, 122, 0.4);
+  }
+  
+  .text-glow {
+    text-shadow: 0 0 24px rgba(214, 184, 122, 0.6);
+  }
+  
+  .box-shadow-soft {
+    box-shadow: 0 4px 24px rgba(58, 44, 26, 0.08);
+  }
+  
+  .box-shadow-glow {
+    box-shadow: 0 0 24px rgba(214, 184, 122, 0.15);
+  }
+  
+  .gradient-light {
+    background: linear-gradient(180deg, transparent 0%, rgba(214, 184, 122, 0.1) 100%);
+  }
+  
+  .gradient-flame {
+    background: linear-gradient(135deg, #D6B87A 0%, #E8D4A8 50%, #D6B87A 100%);
+  }
+  
+  .keyhole-border {
+    border: 1px solid rgba(214, 184, 122, 0.3);
+    border-radius: 8px;
+  }
+  
+  .flame-icon::before {
+    content: "🔥";
+    opacity: 0.8;
+    filter: grayscale(100%) brightness(1.2);
+  }
+}
+
